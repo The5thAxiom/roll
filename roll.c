@@ -29,7 +29,10 @@ int main(int argc, char *argv[]) {
                 if (argv[i][1] == 'n') n = atoi(argv[++i]);
                 if (argv[i][1] == 'a') a = atoi(argv[++i]);
             } else {
-                sscanf(argv[1], "%dd%d+%d", &n, &d, &a);
+                if (argv[1][0] == 'd')
+                    sscanf(argv[1], "d%d+%d", &d, &a);
+                else
+                    sscanf(argv[1], "%dd%d+%d", &n, &d, &a);
             }
         }
     
