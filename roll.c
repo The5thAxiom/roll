@@ -51,16 +51,18 @@ int main(int argc, char *argv[]) {
                     break;
                 
                 case 'v':
-                    printf("version 0.1.0");
+                    printf("version 0.1.0\n");
                     return 0;
                     break;
 
                 case 'h':
-                    printf("help coming soon :)");
+                    printf("help coming soon :)\n");
+                    return 0;
                     break;
                 
                 default:
-                    printf("help coming soon :)");
+                    printf("help coming soon :)\n");
+                    return 0;
                     break;
                 }
             } else {
@@ -78,8 +80,16 @@ int main(int argc, char *argv[]) {
         else {
             int roll1 = rand() % d + 1;
             int roll2 = rand() % d + 1;
-            int ans = a + roll1 > roll2 ? roll1 : roll2;
-            printf("max(%d, %d)", roll1, roll2);
+            int ans = a + (roll1 > roll2 ? roll1 : roll2);
+            printf(
+                "max(%s%d%s, %s%d%s)",
+                roll1 == d ? critColor : roll1 == 1 ? failColor : "",
+                roll1,
+                WHT,
+                roll2 == d ? critColor : roll2 == 1 ? failColor : "",
+                roll2,
+                WHT
+            );
             if (a > 0) printf(" + %d", a);
             printf(" = %d\n", ans);
         }
@@ -87,7 +97,15 @@ int main(int argc, char *argv[]) {
         int roll1 = rand() % d + 1;
         int roll2 = rand() % d + 1;
         int ans = a + (roll1 < roll2 ? roll1 : roll2);
-        printf("min(%d, %d)", roll1, roll2);
+        printf(
+            "min(%s%d%s, %s%d%s)",
+            roll1 == d ? critColor : roll1 == 1 ? failColor : "",
+            roll1,
+            WHT,
+            roll2 == d ? critColor : roll2 == 1 ? failColor : "",
+            roll2,
+            WHT
+        );
         if (a > 0) printf(" + %d", a);
         printf(" = %d\n", ans);
     } else {
