@@ -76,7 +76,7 @@ int main(int argc, char *argv[]) {
     srand(clock());
 
     if (adv && !dadv) {
-        if (n != 1) printf("only 1 dice can be rolled with adavntage at a time");
+        if (n != 1) printf("only 1 dice can be rolled with adavntage at a time\n");
         else {
             int roll1 = rand() % d + 1;
             int roll2 = rand() % d + 1;
@@ -94,20 +94,23 @@ int main(int argc, char *argv[]) {
             printf(" = %d\n", ans);
         }
     } else if (dadv && !adv) {
-        int roll1 = rand() % d + 1;
-        int roll2 = rand() % d + 1;
-        int ans = a + (roll1 < roll2 ? roll1 : roll2);
-        printf(
-            "min(%s%d%s, %s%d%s)",
-            roll1 == d ? critColor : roll1 == 1 ? failColor : "",
-            roll1,
-            WHT,
-            roll2 == d ? critColor : roll2 == 1 ? failColor : "",
-            roll2,
-            WHT
-        );
-        if (a > 0) printf(" + %d", a);
-        printf(" = %d\n", ans);
+        if (n != 1) printf("only 1 dice can be rolled with adavntage at a time\n");
+        else {
+            int roll1 = rand() % d + 1;
+            int roll2 = rand() % d + 1;
+            int ans = a + (roll1 < roll2 ? roll1 : roll2);
+            printf(
+                "min(%s%d%s, %s%d%s)",
+                roll1 == d ? critColor : roll1 == 1 ? failColor : "",
+                roll1,
+                WHT,
+                roll2 == d ? critColor : roll2 == 1 ? failColor : "",
+                roll2,
+                WHT
+            );
+            if (a > 0) printf(" + %d", a);
+            printf(" = %d\n", ans);
+        }
     } else {
         int ans = a;
         for (int i = 0; i < n; i++) {
