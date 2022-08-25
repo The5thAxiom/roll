@@ -25,7 +25,7 @@ eg: `./roll -n 3 -d 20 -a 4`, will roll 3 twenty-sided die and add 4 to the answ
 The `-n`, `-d` and `-a` flags can be omitted by using a string representation of the form: `[n]d[d]+[a]`.
 Examples:
 - `./roll 3d20+4` will roll 3 twenty-sided die and add 4 to the answer
-- `./roll 1d10+2` will roll 1 ten-sided die and add 2 to the result (you currently need to specify `1` in the string format, it will become optional when(if) I get to fixing it :))
+- `./roll d10+2` will roll 1 ten-sided die and add 2 to the result 
 
 
 ## License
